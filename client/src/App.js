@@ -1,10 +1,9 @@
 import React from 'react';
-import { ThemeProvider, CssBaseline, Container, Box } from '@mui/material';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { ThemeProvider, CssBaseline, Container, Box, AppBar, Toolbar, Typography, Link } from '@mui/material';
 import theme from './theme';
 import About from './components/About';
-import Education from './components/Education';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Skills from './components/Skills';
 import Links from './components/Links';
 
@@ -16,17 +15,21 @@ function App() {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Sharanu N Dibbadamani
+              <Link href="/" color="inherit" underline="none">
+                Sharanu N Dibbadamani
+              </Link>
             </Typography>
-            <Button color="inherit" href="#about">About</Button>
-            <Button color="inherit" href="#education">Education</Button>
-            <Button color="inherit" href="#experience">Experience</Button>
-            <Button color="inherit" href="#skills">Skills</Button>
-            <Button color="inherit" href="#links">Links</Button>
+            <Box sx={{ display: 'flex', gap: 2 }}>
+              <Link href="#about" color="inherit" underline="none">About</Link>
+              <Link href="#education" color="inherit" underline="none">Education</Link>
+              <Link href="#experience" color="inherit" underline="none">Experience</Link>
+              <Link href="#skills" color="inherit" underline="none">Skills</Link>
+              <Link href="#links" color="inherit" underline="none">Links</Link>
+            </Box>
           </Toolbar>
         </AppBar>
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Box sx={{ bgcolor: 'background.paper', p: 3, borderRadius: 1 }}>
+        <Container>
+          <Box sx={{ mt: 4 }}>
             <About />
             <Education />
             <Experience />

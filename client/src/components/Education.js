@@ -1,65 +1,45 @@
 import React from 'react';
-import { Box, Typography, Grid, Paper } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 
 const Education = () => {
   const educationData = [
     {
       school: 'SDM College of Engineering and Technology, Dharwad',
       period: '2018 - 2022',
-      degree: 'B.E. in Electrical and Electronics Engineering',
-      image: 'assets/img/education/SDM.jpg'
+      degree: 'B.E. in Electrical and Electronics Engineering'
     },
     {
       school: 'Aryabhata PU Science College, Dharwad',
       period: '2016 - 2018',
-      degree: 'Pre-University Course in Science',
-      image: 'assets/img/education/ACS.jpg'
+      degree: 'Pre-University Course in Science'
     },
     {
       school: 'Kendriya Vidyalaya Sangathan, Dharwad',
       period: '2006 - 2016',
-      degree: 'School',
-      image: 'assets/img/education/kvs.jpg'
+      degree: 'School'
     }
   ];
 
   return (
-    <Box id="education" sx={{ py: 4 }}>
-      <Typography variant="h2" component="h2" gutterBottom>
+    <Box id="education" sx={{ mb: 4 }}>
+      <Typography variant="h1" component="h1">
         Education
       </Typography>
-      <Grid container spacing={3}>
+      <Paper sx={{ p: 2 }}>
         {educationData.map((edu, index) => (
-          <Grid item xs={12} key={index}>
-            <Paper elevation={0} sx={{ p: 3, border: '1px solid #a2a9b1' }}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                <Box
-                  component="img"
-                  src={edu.image}
-                  alt={edu.school}
-                  sx={{
-                    width: 80,
-                    height: 80,
-                    objectFit: 'cover',
-                    border: '1px solid #a2a9b1'
-                  }}
-                />
-                <Box>
-                  <Typography variant="h3" color="primary" gutterBottom>
-                    {edu.school}
-                  </Typography>
-                  <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-                    {edu.period}
-                  </Typography>
-                  <Typography variant="body1">
-                    {edu.degree}
-                  </Typography>
-                </Box>
-              </Box>
-            </Paper>
-          </Grid>
+          <Box key={index} sx={{ mb: 2 }}>
+            <Typography variant="h3" component="h3">
+              {edu.school}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {edu.period}
+            </Typography>
+            <Typography variant="body1">
+              {edu.degree}
+            </Typography>
+          </Box>
         ))}
-      </Grid>
+      </Paper>
     </Box>
   );
 };

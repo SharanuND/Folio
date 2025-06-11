@@ -3,15 +3,15 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3366cc', // Wikipedia blue
+      main: '#000000',
     },
     background: {
       default: '#ffffff',
       paper: '#ffffff',
     },
     text: {
-      primary: '#202122', // Wikipedia text color
-      secondary: '#54595d', // Wikipedia secondary text
+      primary: '#000000',
+      secondary: '#54595d',
     },
   },
   typography: {
@@ -21,29 +21,40 @@ const theme = createTheme({
       fontWeight: 'normal',
       borderBottom: '1px solid #a2a9b1',
       paddingBottom: '0.25em',
-      marginBottom: '0.5em',
+      marginBottom: '0.25em',
     },
     h2: {
       fontSize: '1.5em',
       fontWeight: 'normal',
       borderBottom: '1px solid #a2a9b1',
       paddingBottom: '0.25em',
-      marginBottom: '0.5em',
+      marginBottom: '0.25em',
     },
     h3: {
       fontSize: '1.2em',
-      fontWeight: 'normal',
+      fontWeight: 'bold',
+    },
+    h4: {
+      fontSize: '1em',
+      fontWeight: 'bold',
     },
     body1: {
-      fontSize: '1em',
+      fontSize: '0.875em',
       lineHeight: 1.6,
     },
   },
   components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: '960px',
+          padding: '1em',
+        },
+      },
+    },
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundColor: '#ffffff',
           boxShadow: 'none',
           border: '1px solid #a2a9b1',
           borderRadius: '3px',
@@ -54,7 +65,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: '#f8f9fa',
-          color: '#202122',
+          color: '#000000',
           boxShadow: 'none',
           borderBottom: '1px solid #a2a9b1',
         },
@@ -64,7 +75,23 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: '3px',
+          backgroundColor: '#f8f9fa',
+          border: '1px solid #a2a9b1',
+          color: '#000000',
+          '&:hover': {
+            backgroundColor: '#eaecf0',
+          },
+        },
+      },
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          color: '#0645ad',
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
         },
       },
     },
