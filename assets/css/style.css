@@ -200,6 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   cursor: pointer;
   text-align: right;
+  color: #fff;
 }
 
 .mobile-nav-toggle i {
@@ -208,38 +209,37 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav {
   position: fixed;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
   z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  left: -260px;
+  width: 260px;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.7);
-  transition: ease-in-out 0s;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 10px;
-  padding: 10px 0;
-  border: 2px solid rgba(255, 255, 255, 0.12);
+  transition: 0.4s;
 }
 
-.mobile-nav * {
-  margin: 0;
+.mobile-nav.active {
+  left: 0;
+}
+
+.mobile-nav ul {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
-.mobile-nav a {
-  display: block;
+.mobile-nav ul li {
   position: relative;
-  color: #fff;
-  padding: 10px 20px;
-  font-weight: 500;
-  outline: none;
 }
 
-.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #1c7d32;
+.mobile-nav ul li a {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  position: relative;
   text-decoration: none;
 }
 
@@ -1094,5 +1094,78 @@ section .container {
     left: 50%;
     right: 0;
     transform: translateX(-50%);
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  #header h1 {
+    font-size: 24px;
+  }
+  
+  #header h2 {
+    font-size: 18px;
+  }
+  
+  .section-title h2 {
+    font-size: 24px;
+  }
+}
+
+/* Responsive Education Section */
+@media (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .education-item img {
+    margin: 0 auto 15px auto;
+  }
+}
+
+/* Responsive About Section */
+@media (max-width: 768px) {
+  .about .content {
+    padding: 0;
+  }
+  
+  .about .content ul {
+    padding-left: 0;
+  }
+}
+
+/* Responsive Social Links */
+@media (max-width: 768px) {
+  .social-links {
+    margin-top: 15px;
+  }
+  
+  .social-links a {
+    margin: 0 5px;
+  }
+}
+
+/* General Responsive Improvements */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .nav-menu ul li a {
+    padding: 10px 15px;
   }
 }
